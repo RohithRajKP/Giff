@@ -1,0 +1,1 @@
+<resources>    <string name="app_name">Giff</string>    <!-- TODO: Remove or change this placeholder text -->    <string name="hello_blank_fragment">Hello blank fragment</string>    <string name="gif_load_error">Could not fetch gifs</string>    <string name="fav_list_is_empty">Ooops..Favorite List is Empty</string></resources>
