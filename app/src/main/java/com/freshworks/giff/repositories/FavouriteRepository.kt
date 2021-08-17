@@ -1,6 +1,6 @@
 package com.freshworks.giff.repositories
 import com.freshworks.giff.db.AppDatabase
-class FavoriteRepository(
+class FavouriteRepository(
     private val db: AppDatabase
 )  {
 

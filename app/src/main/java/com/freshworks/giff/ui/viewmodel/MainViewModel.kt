@@ -1,12 +1,11 @@
 package com.freshworks.giff.ui.viewmodel
 
 import android.content.DialogInterface
-import android.view.View
 import androidx.databinding.ObservableField
 import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
 import com.freshworks.giff.adapters.PagerAdapter
-import com.freshworks.giff.ui.fragment_favorite.FavoriteFragment
+import com.freshworks.giff.ui.fragment_favourite.FavouriteFragment
 import com.freshworks.giff.ui.fragment_trending.TrendingFragment
 
 
@@ -25,7 +24,7 @@ class MainViewModel(val contract: MainActivityContract) {
         listOf("Trending", "Favourite"),
         listOf(
             TrendingFragment(),
-            FavoriteFragment()
+            FavouriteFragment()
 
         )
     )

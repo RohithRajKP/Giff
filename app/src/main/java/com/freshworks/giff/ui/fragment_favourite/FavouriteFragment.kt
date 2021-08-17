@@ -1,4 +1,4 @@
-package com.freshworks.giff.ui.fragment_favorite
+package com.freshworks.giff.ui.fragment_favourite
 
 import android.os.Bundle
 import android.util.Log
@@ -21,7 +21,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class FavoriteFragment : Fragment(R.layout.fragment_favorites), RecyclerViewClickListenerFav,
+class FavouriteFragment : Fragment(R.layout.fragment_favourites), RecyclerViewClickListenerFav,
     KodeinAware {
     override val kodein by kodein() //dependency injection
     lateinit var viewModel: favoriteViewModel
@@ -37,7 +37,7 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorites), RecyclerViewClic
         super.onViewCreated(view, savedInstanceState)
 /*
         val db = AppDatabase.invoke(requireContext())
-        val repository = FavoriteRepository(db)
+        val repository = FavouriteRepository(db)
         factory = FavoriteViewModelFactory(repository)
         note: with out Kodein we require these object for accessing viewmodel , but kodein simplifies the
         dependency.

@@ -6,12 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freshworks.giff.db.entities.Giff
 
-import com.freshworks.giff.repositories.FavoriteRepository
+import com.freshworks.giff.repositories.FavouriteRepository
 import com.freshworks.giff.util.lazyDeferred
 import kotlinx.coroutines.launch
 
 class favoriteViewModel(
-    val favRepository: FavoriteRepository
+    val favRepository: FavouriteRepository
 ) : ViewModel() {
 ////// created for unit testing/////
     private val favLiveData = MutableLiveData<List<Giff>>()

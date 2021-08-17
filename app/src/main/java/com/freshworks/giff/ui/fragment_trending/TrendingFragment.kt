@@ -17,13 +17,13 @@ import com.freshworks.giff.adapters.TrendingAdapter
 import com.freshworks.giff.clicklisteners.RecyclerViewClickListener
 import com.freshworks.giff.db.entities.Giff
 import com.freshworks.giff.model.Data
+import com.freshworks.giff.ui.viewmodel.SharedViewModel
+import com.freshworks.giff.ui.viewmodel.TrendingViewModel
 import com.freshworks.giff.util.Constants.Companion.DEFAULT_LIMIT
 import com.freshworks.giff.util.Constants.Companion.MAX_PAGE
 import com.freshworks.giff.util.Resource
-import com.freshworks.giff.ui.viewmodel.SharedViewModel
-import com.freshworks.giff.ui.viewmodel.TrendingViewModel
-import kotlinx.android.synthetic.main.item_error_message.*
 import kotlinx.android.synthetic.main.fragment_trending.*
+import kotlinx.android.synthetic.main.item_error_message.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
@@ -33,12 +33,13 @@ import org.kodein.di.generic.instance
 class TrendingFragment : Fragment(), RecyclerViewClickListener, KodeinAware {
     override val kodein by kodein()
     private val factory: TrendingViewModelFactory by instance()
-/*
-     private lateinit var factory: TrendingViewModelFactory
-     facory is replaced with dependecncy injection kodein 
-     we can access the viewmodel factory by calling instance().
-    
-*/
+
+    /*
+         private lateinit var factory: TrendingViewModelFactory
+         facory is replaced with dependecncy injection kodein
+         we can access the viewmodel factory by calling instance().
+
+    */
     private lateinit var viewModel: TrendingViewModel
     lateinit var trendingAdapter: TrendingAdapter
     var currentpage = 1 //this is for page validation in api, by default it is 1
@@ -66,7 +67,7 @@ class TrendingFragment : Fragment(), RecyclerViewClickListener, KodeinAware {
          dependency.
 */
         viewModel = ViewModelProvider(this, factory).get(TrendingViewModel::class.java)
-        viewModel.loadGiffs(currentpage,  MAX_PAGE,"")
+        viewModel.loadGiffs(currentpage, MAX_PAGE, "")
         viewModel.__gif.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success<*> -> {
@@ -93,7 +94,7 @@ class TrendingFragment : Fragment(), RecyclerViewClickListener, KodeinAware {
             }
         })
         btnRetry.setOnClickListener {
-            if(currentpage>=1){
+            if (currentpage >= 1) {
                 currentpage = currentpage - 1
             }
             viewModel.loadGiffs(currentpage, MAX_PAGE, q)
@@ -195,7 +196,8 @@ note : addTextChangedListener is not using now ,user manually search giffs.
         recycler_view_movies.apply {
             adapter = trendingAdapter
             recycler_view_movies.setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(activity)// GridLayoutManager(activity, 2)// LinearLayoutManager(activity)
+            layoutManager =
+                LinearLayoutManager(activity)// GridLayoutManager(activity, 2)// LinearLayoutManager(activity)
             addOnScrollListener(this@TrendingFragment.scrollListener)
         }
     }

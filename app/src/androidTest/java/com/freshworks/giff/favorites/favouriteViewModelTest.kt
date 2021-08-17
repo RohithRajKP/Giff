@@ -9,7 +9,7 @@ import com.google.common.truth.Truth
 import com.freshworks.giff.db.AppDatabase
 import com.freshworks.giff.db.GiffValues
 import com.freshworks.giff.db.getOrAwaitValue
-import com.freshworks.giff.repositories.FavoriteRepository
+import com.freshworks.giff.repositories.FavouriteRepository
 import com.freshworks.giff.ui.viewmodel.favoriteViewModel
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -19,7 +19,7 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4::class)
-class favoriteViewModelTest {
+class favouriteViewModelTest {
     private lateinit var viewModel: favoriteViewModel
     private lateinit var values: GiffValues
 
@@ -31,7 +31,7 @@ class favoriteViewModelTest {
         val context = ApplicationProvider.getApplicationContext<Context>() //context instsnce
         val db = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java)
             .allowMainThreadQueries().build()//db instsnce
-        val repo = FavoriteRepository(db)// repo instnce
+        val repo = FavouriteRepository(db)// repo instnce
         val dataSource = favoriteViewModel(repo)//
         viewModel = dataSource //view model instnce
         values = GiffValues()// dummy values from class
