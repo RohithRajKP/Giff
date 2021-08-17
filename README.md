@@ -35,4 +35,4 @@ favorite button in first screen indicate GIF is a favourite or not
 
 unit testing for room data base is added. (need to fix viewmodel unit test)
 
-thank you for reading ☺️☺️☺️☺️☺️☺️☺️☺️☺️☺️
+thank you for reading ☺️☺️☺️
