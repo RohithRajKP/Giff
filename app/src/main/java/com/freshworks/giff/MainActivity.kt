@@ -1,6 +1,5 @@
 package com.freshworks.giff
 
-//import com.saagsystems.tabtest.databinding.ActivityMainBinding
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

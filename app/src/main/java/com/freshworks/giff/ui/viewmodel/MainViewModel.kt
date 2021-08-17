@@ -25,7 +25,6 @@ class MainViewModel(val contract: MainActivityContract) {
         listOf(
             TrendingFragment(),
             FavouriteFragment()
-
         )
     )
     var currentPosition = 0 //set to xml throgh binding
@@ -44,19 +43,7 @@ class MainViewModel(val contract: MainActivityContract) {
     }
 
 
-    ////////////////
-    private var count: Int = 0
 
-    var alertMessage = ObservableField<String>()
 
-    var clicksMessage = ObservableField("No clicks")
-
-    fun onBtnClick() {
-        alertMessage.set("Exit App?")
-    }
-
-    fun onDialogOkClick(dialog: DialogInterface?, which: Int) {
-        clicksMessage.set(count.toString() + " clicks")
-    }
 
 }

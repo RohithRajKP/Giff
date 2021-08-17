@@ -15,7 +15,7 @@ import com.freshworks.giff.clicklisteners.RecyclerViewClickListenerFav
 import com.freshworks.giff.db.entities.Giff
 import com.freshworks.giff.ui.viewmodel.SharedViewModel
 import com.freshworks.giff.ui.viewmodel.favoriteViewModel
-import kotlinx.android.synthetic.main.fragment_favorites.*
+import kotlinx.android.synthetic.main.fragment_favourites.*
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
